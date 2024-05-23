@@ -15,12 +15,16 @@
         
         
         <form action="">
-            <label for="N1" class="form-label">N1:</label>
-            <input type="text" class="form-control" id="n1" required>
-            <label for="N1" class="form-label">N2:</label>
-            <input type="text" class="form-control" id="n2" required>
-            <button class="btn btn-primary" type="submit">Somar</button>
+            <label for="n1" class="form-label">Digite o número 1:</label>
+            <input type="number" class="form-control" id="n1" required>
+
+            <label for="n2" class="form-label">Digite o número 2:</label>
+            <input type="number" class="form-control" id="n2" required>
+
+            <button class="btn btn-primary" type="button" onclick="soma()">Somar</button>
             <button class="btn btn-primary" type="reset">Limpar</button>
+
+            <div class="resultado"></div>
         </form>
     </div>
 
