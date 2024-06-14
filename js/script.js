@@ -1,35 +1,57 @@
-// console.log('Script via body', document.getElementById('n1'))
+// Pegar os números dos inputs do HTML e converter para Float, pois será possível fazer o cálculo com inteiros e decimais
+const numero1 = document.getElementById('n1');
+const numero2 = document.getElementById('n2');
+const conteudoDiv = document.querySelector('.resultado');
 
-const numero1 = (document.getElementById('n1'));
-const numero2 = (document.getElementById('n2'));
-const conteudoDiv = document.querySelector('.resultado')
+
+function calcular(e) {
+    // console.log(e.innerText);
+    const operacao = e.innerText
+    if (numero1.value === '' && numero2.value === '') {
+        alert('preencher os campos')
+    } else {
+        if (numero1.value === '') {
+            alert('Por favor, Preencher o campo 1')
+        }
+        else if (numero2.value === '') {
+            alert('Por favor, Preencher o campo 2')
+        }
+        else {
+            executarOperacao(operacao)
+        }
+    }
+}
+
+function executarOperacao(operacao) {
+  if(operacao === '+'){
+    soma()
+  } else if(operacao === '-') {
+    subtrair()
+  } else if (operacao === '*') {
+    multiplicacao()
+  } else if (operacao === '/') {
+    divisao()
+  }
+}
 
 function soma() {
-    if (numero1.value !== '' && numero2.value !== '') {
-        console.log('somar!')
-
-    let resultado = parseFloat(numero1.value) + parseFloat(numero2.value)
-    exibirResultado(resultado)
-    } else {
-        console.log ('alerta preencher campos')
-        alert ('Preencha os campos para realizar a soma!')
-    }
-
+    let resultado = parseFloat(numero1.value) + parseFloat(numero2.value);
+    exibirResultado(resultado);
 }
 
 function subtrair() {
-    let resultado = parseFloat(numero1.value) - parseFloat(numero2.value)
-    exibirResultado(resultado)
+    let resultado = parseFloat(numero1.value) - parseFloat(numero2.value);
+    exibirResultado(resultado);
 }
 
-function multiplicar() {
-    let resultado = parseFloat(numero1.value) * parseFloat(numero2.value)
-    exibirResultado(resultado)
+function multiplicacao() {
+    let resultado = parseFloat(numero1.value) * parseFloat(numero2.value);
+    exibirResultado(resultado);
 }
 
-function dividir() {
-    let resultado = parseFloat(numero1.value) / parseFloat(numero2.value)
-    exibirResultado(resultado)
+function divisao() {
+    let resultado = parseFloat(numero1.value) / parseFloat(numero2.value);
+    exibirResultado(resultado);
 }
 
 function exibirResultado(result) {
@@ -39,5 +61,5 @@ function exibirResultado(result) {
 
 const limpar = () => {
     conteudoDiv.style.display = 'none'
-    conteudoDiv.innerHTML = 'Resultado: '; 
+    conteudoDiv.innerHTML = 'Resultado: '; //''
 }

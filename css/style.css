@@ -3,6 +3,6 @@
     background-color: cadetblue;
     font-size: 5em;
     padding: 12px;
-    display: flex;
+    display: none;
     justify-content: center;
 }
